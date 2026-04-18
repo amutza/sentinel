@@ -1,0 +1,52 @@
+{
+  "name": "RugCheck",
+  "type": "object",
+  "properties": {
+    "contract_address": {
+      "type": "string",
+      "description": "The memecoin contract address"
+    },
+    "chain": {
+      "type": "string",
+      "enum": [
+        "solana",
+        "ethereum",
+        "base",
+        "bsc",
+        "unknown"
+      ],
+      "default": "solana"
+    },
+    "risk_score": {
+      "type": "number",
+      "description": "0-100, higher = riskier"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "safe",
+        "caution",
+        "high_risk",
+        "likely_rug"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "red_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "green_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "contract_address"
+  ]
+}
