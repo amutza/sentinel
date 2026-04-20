@@ -1,0 +1,26 @@
+{
+  "name": "CommunityVerdict",
+  "type": "object",
+  "properties": {
+    "contract_address": {
+      "type": "string",
+      "description": "The contract address being voted on"
+    },
+    "vote": {
+      "type": "string",
+      "enum": [
+        "agree",
+        "disagree"
+      ],
+      "description": "Whether the voter agrees or disagrees with the AI verdict"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Optional short comment from the voter"
+    }
+  },
+  "required": [
+    "contract_address",
+    "vote"
+  ]
+}

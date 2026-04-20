@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, ShieldCheck, ShieldAlert, Skull, RotateCcw } from 'lucide-react';
+import ShareReport from './ShareReport';
+import RiskBadge from './RiskBadge';
+import CommunityVerdicts from './CommunityVerdicts';
 
 const verdictMap = {
   safe: { label: 'Looks OK', icon: ShieldCheck, color: 'text-primary', bar: 'bg-primary', ring: 'ring-primary/30' },
@@ -9,7 +12,7 @@ const verdictMap = {
   likely_rug: { label: 'Likely rug', icon: Skull, color: 'text-destructive', bar: 'bg-destructive', ring: 'ring-destructive/40' }
 };
 
-export default function RiskReport({ report, onReset }) {
+export default function RiskReport({ report, onReset, ca }) {
   const v = verdictMap[report.verdict] || verdictMap.caution;
   const Icon = v.icon;
   const score = Math.max(0, Math.min(100, report.risk_score ?? 50));
@@ -79,6 +82,10 @@ export default function RiskReport({ report, onReset }) {
           </ul>
         </div>
       )}
+
+      <ShareReport report={report} ca={ca} />
+      <RiskBadge report={report} ca={ca} />
+      <CommunityVerdicts ca={ca} />
 
       <button
         onClick={onReset}

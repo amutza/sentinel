@@ -133,7 +133,7 @@ If the token cannot be found anywhere, return verdict "high_risk", score ~70, an
               )}
             </div>
           ) : (
-            <RiskReport report={report} onReset={reset} />
+            <RiskReport report={report} onReset={reset} ca={ca} />
           )}
         </motion.div>
       </main>
