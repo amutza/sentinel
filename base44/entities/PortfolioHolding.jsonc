@@ -1,0 +1,42 @@
+{
+  "name": "PortfolioHolding",
+  "type": "object",
+  "properties": {
+    "contract_address": {
+      "type": "string",
+      "description": "Token contract address"
+    },
+    "token_name": {
+      "type": "string",
+      "description": "Token name or ticker e.g. $PEPE"
+    },
+    "chain": {
+      "type": "string",
+      "enum": [
+        "solana",
+        "ethereum",
+        "base",
+        "bsc"
+      ],
+      "default": "solana"
+    },
+    "purchase_price_usd": {
+      "type": "number",
+      "description": "Price per token in USD at time of purchase"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Number of tokens held"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional personal notes"
+    }
+  },
+  "required": [
+    "contract_address",
+    "token_name",
+    "purchase_price_usd",
+    "amount"
+  ]
+}

@@ -122,6 +122,26 @@ export default function Learn() {
             </Link>
           </motion.div>
 
+          {/* Quick links */}
+          <div className="grid grid-cols-2 gap-3">
+            <Link
+              to="/portfolio"
+              className="rounded-2xl border border-border bg-card p-4 hover:border-primary/50 transition-all text-center"
+            >
+              <div className="text-2xl mb-1">💼</div>
+              <p className="font-semibold text-sm">My Portfolio</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Track unrealized P&L</p>
+            </Link>
+            <Link
+              to="/leaderboard"
+              className="rounded-2xl border border-border bg-card p-4 hover:border-primary/50 transition-all text-center"
+            >
+              <div className="text-2xl mb-1">🏆</div>
+              <p className="font-semibold text-sm">Leaderboard</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Community rankings</p>
+            </Link>
+          </div>
+
           <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60 text-center pb-8">
             Not financial advice · DYOR
           </p>

@@ -1,0 +1,39 @@
+{
+  "name": "SandboxResult",
+  "type": "object",
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "description": "ID of the sandbox scenario"
+    },
+    "scenario_name": {
+      "type": "string"
+    },
+    "user_prediction": {
+      "type": "string",
+      "description": "What the user predicted"
+    },
+    "ai_verdict": {
+      "type": "string",
+      "enum": [
+        "safe",
+        "caution",
+        "high_risk",
+        "likely_rug"
+      ]
+    },
+    "was_correct": {
+      "type": "boolean"
+    },
+    "risk_score": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "scenario_name",
+    "user_prediction",
+    "ai_verdict",
+    "was_correct"
+  ]
+}

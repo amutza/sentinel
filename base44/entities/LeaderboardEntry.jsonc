@@ -1,0 +1,34 @@
+{
+  "name": "LeaderboardEntry",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User's email (used as unique key)"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "User's display name"
+    },
+    "total_xp": {
+      "type": "number",
+      "default": 0
+    },
+    "sandbox_attempts": {
+      "type": "number",
+      "default": 0
+    },
+    "sandbox_correct": {
+      "type": "number",
+      "default": 0
+    },
+    "success_rate": {
+      "type": "number",
+      "description": "Percentage of correct sandbox predictions 0-100",
+      "default": 0
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}

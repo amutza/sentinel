@@ -58,6 +58,33 @@ Remember: this is a TRAINING scenario to help people learn to spot rugs. Be educ
 
     setReport(res);
     setLoading(false);
+
+    // Persist result and sync leaderboard
+    try {
+      await base44.entities.SandboxResult.create({
+        scenario_id: scenario.id,
+        scenario_name: scenario.name,
+        user_prediction: prediction,
+        ai_verdict: res.verdict,
+        was_correct: res.student_was_correct,
+        risk_score: res.risk_score,
+      });
+
+      const user = await base44.auth.me();
+      if (user) {
+        const existing = await base44.entities.LeaderboardEntry.filter({ user_email: user.email });
+        if (existing.length > 0) {
+          const e = existing[0];
+          const attempts = (e.sandbox_attempts || 0) + 1;
+          const correct = (e.sandbox_correct || 0) + (res.student_was_correct ? 1 : 0);
+          await base44.entities.LeaderboardEntry.update(e.id, {
+            sandbox_attempts: attempts,
+            sandbox_correct: correct,
+            success_rate: Math.round((correct / attempts) * 100),
+          });
+        }
+      }
+    } catch (_) {}
   };
 
   const reset = () => {
