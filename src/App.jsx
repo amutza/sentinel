@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import Home from '@/pages/Home';
 import Checker from '@/pages/Checker';
 import Learn from '@/pages/Learn';
+import Sandbox from '@/pages/Sandbox';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -38,6 +39,7 @@ const AuthenticatedApp = () => {
       <Route path="/" element={<Home />} />
       <Route path="/checker" element={<Checker />} />
       <Route path="/learn" element={<Learn />} />
+      <Route path="/sandbox" element={<Sandbox />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

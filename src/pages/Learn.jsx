@@ -102,6 +102,26 @@ export default function Learn() {
             );
           })}
 
+          {/* Practice Sandbox CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center"
+          >
+            <div className="text-3xl mb-2">🧪</div>
+            <h3 className="font-semibold">Practice Sandbox</h3>
+            <p className="text-sm text-muted-foreground mt-1 mb-4">
+              Put your knowledge to the test. Analyze hypothetical memecoins and see how well you spot rugs — no real funds needed.
+            </p>
+            <Link
+              to="/sandbox"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:brightness-110 transition-all"
+            >
+              Enter Sandbox →
+            </Link>
+          </motion.div>
+
           <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60 text-center pb-8">
             Not financial advice · DYOR
           </p>
