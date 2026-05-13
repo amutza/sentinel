@@ -20,6 +20,7 @@ export default function Nav() {
         <a href="#install" className="hover:text-foreground transition-colors">Install</a>
         <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
         <a href="/learn" className="hover:text-foreground transition-colors text-primary font-medium">Learn 🎓</a>
+        <a href="/xtracker" className="hover:text-foreground transition-colors">X Tracker 🔍</a>
       </div>
       <a
         href="/checker"

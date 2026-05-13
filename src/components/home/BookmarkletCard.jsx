@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bookmark, MousePointer2, Copy, Check } from 'lucide-react';
+import { Bookmark, MousePointer2, Copy, Check, Twitter } from 'lucide-react';
 import { buildBookmarkletCode } from '@/lib/bookmarklet';
 
 export default function BookmarkletCard() {
@@ -91,6 +91,36 @@ export default function BookmarkletCard() {
               {copied ? <Check className="w-3.5 h-3.5 text-primary" /> : <Copy className="w-3.5 h-3.5" />}
               {copied ? 'Code copied' : 'Or copy bookmarklet code'}
             </button>
+
+            {/* Divider */}
+            <div className="mt-12 w-full max-w-xl border-t border-border" />
+
+            {/* X Tracker panel */}
+            <div className="mt-10 w-full max-w-xl">
+              <p className="text-xs font-mono uppercase tracking-widest text-primary mb-2 text-center">Step 02 — Optional</p>
+              <h3 className="text-xl font-semibold tracking-tight text-center mb-2">
+                Monitor <span className="font-serif italic">Crypto Twitter</span> for contract drops
+              </h3>
+              <p className="text-sm text-muted-foreground text-center mb-6">
+                Track any X accounts and get AI-extracted contract addresses straight to your feed — then one-click rug check.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
+                <motion.a
+                  href="/xtracker"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-primary/40 bg-primary/10 text-foreground font-semibold text-sm hover:bg-primary/20 transition-all"
+                >
+                  <Twitter className="w-4 h-4 text-primary" />
+                  Open X Tracker
+                </motion.a>
+                <div className="text-xs font-mono text-muted-foreground flex flex-wrap gap-4 justify-center">
+                  <span>✓ Monitor any handle</span>
+                  <span>✓ Auto-extract CAs</span>
+                  <span>✓ Instant rug check</span>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

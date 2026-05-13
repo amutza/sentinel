@@ -11,6 +11,7 @@ import Learn from '@/pages/Learn';
 import Sandbox from '@/pages/Sandbox';
 import Portfolio from '@/pages/Portfolio';
 import Leaderboard from '@/pages/Leaderboard';
+import XTracker from '@/pages/XTracker';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -44,6 +45,7 @@ const AuthenticatedApp = () => {
       <Route path="/sandbox" element={<Sandbox />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/leaderboard" element={<Leaderboard />} />
+      <Route path="/xtracker" element={<XTracker />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
